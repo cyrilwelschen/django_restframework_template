@@ -21,3 +21,12 @@ def snippet_list(request):
         serializer = SnippetSerializer(snippets, many=True)
         return JsonResponse(serializer.data, safe=False)
 ```
+### **Basic API is working here**
+
+## Part 2 & 3: Requests/Responses and Views
+
+**Part 2**: Entirely rewrote views.py with little modificaitons of snippets/urls.py. But other than that no changes. Allowes for webbased API with UI.
+
+### Part 3: Class-based Views
+
+Up next...
