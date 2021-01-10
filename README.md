@@ -27,6 +27,10 @@ def snippet_list(request):
 
 **Part 2**: Entirely rewrote views.py with little modificaitons of snippets/urls.py. But other than that no changes. Allowes for webbased API with UI.
 
-### Part 3: Class-based Views
+**Part 3**: Entirely rewrote views.py twice, with little modificaitons of snippets/urls.py. But other than that no changes.
+
+Result is most generic views with minimal amount of code.
+
+## Part 4: Authentication & Permissions
 
 Up next...
