@@ -31,6 +31,31 @@ def snippet_list(request):
 
 Result is most generic views with minimal amount of code.
 
-## Part 4: Authentication & Permissions
+## Part 4: Authentication & Permissions (also Blueprint for extending app/model)
 
-Up next...
+In this part:
+
+* Code snippets are always associated with a creator.
+* Only authenticated users may create snippets.
+* Only the creator of a snippet may update or delete it.
+* Unauthenticated requests should have full read-only access.
+
+The following steps were taken to achieve this:
+
+1. Update models.py and make new db including some superusers.
+2. Added `UserSerializer` class in serializers.py
+3. Define `UserList` and `UserDetail` in views.py with generic constructors and update snippets/urls.py to include paths to user views.
+4. **Key step**: associate snippets with users - add `perform_create` method to `SnippetList` class
+
+   ```
+   def perform_create(self, serializer):
+       serializer.save(owner=self.request.user)
+   ```
+5. Update serializer.py with an `owner` field.
+6. **Key step**: define permissions as `permission_classes` in the two view-classes `SnippetList` and `SnippetDetail`:
+
+   ```
+   permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+   ```
+7. Update project-level urls.py to be able to login on api UI level.
+8. **Key step**: create *permissions.py* and define class to be used to have custom behaviour
