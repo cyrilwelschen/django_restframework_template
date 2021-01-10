@@ -59,3 +59,12 @@ The following steps were taken to achieve this:
    ```
 7. Update project-level urls.py to be able to login on api UI level.
 8. **Key step**: create *permissions.py* and define class to be used to have custom behaviour
+
+## Part 5: Relationships and Hyperlinked APIs
+
+We replace primary keys with hyperlinks for relating fileds/elements.
+
+1. In *views.py* add `api_root` and `SnippetHighlight`.
+2. In *urls.py* add root path '' and for snippet highlighting.
+3. Hyperlinking API by updating corresponding serializers `SnippetSerializer` and `UserSerializer`.
+4. Naming URL patterns and adding pagination in *settings.py*
