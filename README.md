@@ -68,3 +68,8 @@ We replace primary keys with hyperlinks for relating fileds/elements.
 2. In *urls.py* add root path '' and for snippet highlighting.
 3. Hyperlinking API by updating corresponding serializers `SnippetSerializer` and `UserSerializer`.
 4. Naming URL patterns and adding pagination in *settings.py*
+
+## Part 6: ViewSets & Routers
+
+This part introduces ViewSets and Routers to reduce the code to be written. One loses flexibilty however.
+
